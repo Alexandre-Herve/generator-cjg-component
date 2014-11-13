@@ -1,12 +1,9 @@
 'use strict'
 
-angular.module '<%= scriptAppName %>'
-.factory '<%= cameledName %>', ->
+module = angular.module '<%= scriptAppName %>', []
 
-  # Service logic
-  # ...
-  meaningOfLife = 42
+# http://benhollis.net/blog/2014/01/17/cleanly-declaring-angularjs-services-with-coffeescript/
 
-  # Public API here
-  someMethod: ->
-    meaningOfLife
+module.factory '<%= cameledName %>', ->
+  new class <%= cameledName %>
+    constructor: ->
